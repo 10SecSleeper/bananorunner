@@ -591,7 +591,7 @@ MonoBehaviour:
   m_MatchHost: mm.unet.unity3d.com
   m_MatchPort: 443
   matchName: default
-  matchSize: 4
+  matchSize: 0
   isNetworkActive: 0
   matchMaker: {fileID: 0}
   UICanvas: {fileID: 1325597009356318}

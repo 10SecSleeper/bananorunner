@@ -35,7 +35,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1553166641090564}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 3.81, z: 32.9}
+  m_LocalPosition: {x: 0, y: 3.078, z: 83.55}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -83,13 +83,18 @@ MonoBehaviour:
     impenetrable: 0
     interactive: 0
     banano: 1
-  - obj: {fileID: 1568715525372368, guid: 6d4c30958a5d9f9469993b24978361fe, type: 2}
-    name: Wall
-    impenetrable: 1
+  - obj: {fileID: 1187682560147178, guid: 88026d27a6bd57c4eaf018bc7ebe77d0, type: 2}
+    name: Fence
+    impenetrable: 0
     interactive: 0
     banano: 0
   - obj: {fileID: 0}
     name: More Air
     impenetrable: 0
+    interactive: 0
+    banano: 0
+  - obj: {fileID: 1529689851850622, guid: 241b5497f7c3b8d4f81796913d4008cd, type: 2}
+    name: CARLOS MATOS
+    impenetrable: 1
     interactive: 0
     banano: 0
