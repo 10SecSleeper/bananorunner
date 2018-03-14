@@ -9,6 +9,8 @@ public class BananoNetManager : NetworkManager
     public GameObject UICanvas;
     public ServerReferee referee;
 
+    public string clientWallet;
+
     void Start()
     {
 
@@ -40,6 +42,14 @@ public class BananoNetManager : NetworkManager
         GameObject player = Instantiate(playerPrefab);
         NetworkServer.AddPlayerForConnection(conn, player, playerControllerId);
 
+
+        StartCoroutine(DelayPlayerAdd(conn, player));
+        
+    }
+
+    IEnumerator DelayPlayerAdd(NetworkConnection conn, GameObject player)
+    {
+        yield return new WaitForSeconds(2);
         referee.PlayerJoined(conn, player);
     }
 
@@ -53,11 +63,6 @@ public class BananoNetManager : NetworkManager
     public override void OnClientConnect(NetworkConnection conn)
     {
         base.OnClientConnect(conn);
-
-        Debug.Log("Connected to server");
-
-        
-
     }
 
     public void StartAsServer()

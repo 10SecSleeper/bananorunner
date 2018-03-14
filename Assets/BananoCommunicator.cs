@@ -5,7 +5,6 @@ using UnityEngine.Networking;
 
 public class BananoCommunicator : NetworkBehaviour {
 
-    public string randomSeed = "HI THERE BUDDY!";
     public GameObject objectSpawner;
     GameObject ump;
 
@@ -15,15 +14,29 @@ public class BananoCommunicator : NetworkBehaviour {
     [SyncVar]
     public int bananosMissed = 0;
 
-	// Use this for initialization
-	void Start () {
+    [SyncVar]
+    public string netWallet = "";
 
+	// Use this for initialization
+	void Awake () {
         NetworkIdentity nw = GetComponent<NetworkIdentity>();
         ump = GameObject.FindGameObjectWithTag("Umpire");
 
         ump.GetComponent<Umpire>().playercomm = this;
-	}
-	
+    }
+
+    public override void OnStartLocalPlayer()
+    {
+        base.OnStartLocalPlayer();
+        CmdUpdateWallet(PlayerPrefs.GetString("LocalWallet"));
+    }
+
+    [Command]
+    void CmdUpdateWallet(string w)
+    {
+        netWallet = w;
+    }
+
 	// Update is called once per frame
 	void Update () {
 		

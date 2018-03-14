@@ -29,7 +29,11 @@ public class ServerReferee : NetworkBehaviour {
     public void PlayerJoined(NetworkConnection conn, GameObject pobj)
     {
 
-        pinterface.AddPlayer(conn, pobj, timer, conn.address, "");
+        string tmpwal = pobj.GetComponent<BananoCommunicator>().netWallet;
+
+        Debug.Log(tmpwal);
+
+        pinterface.AddPlayer(conn, pobj, timer, conn.address, tmpwal);
 
         ObstacleDictionary.ObstacleIndex tempIndex = new ObstacleDictionary.ObstacleIndex();
 

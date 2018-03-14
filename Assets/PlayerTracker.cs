@@ -137,7 +137,7 @@ public class PlayerTracker : NetworkBehaviour {
             if (playerCheck == "NULL")
             {
                 db.SavePlayerData(wallet, ip, "0", "0");
-                Debug.Log("New player added from " + ip);
+                Debug.Log("New player added from " + ip + ". Their wallet is " + wallet);
             }
             else
             {
