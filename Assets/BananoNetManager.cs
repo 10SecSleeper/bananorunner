@@ -7,6 +7,7 @@ public class BananoNetManager : NetworkManager
 {
     
     public GameObject UICanvas;
+    public GameObject ServerCanvas;
     public ServerReferee referee;
 
     public string clientWallet;
@@ -76,6 +77,7 @@ public class BananoNetManager : NetworkManager
         Debug.Log("Testing");
 
         UICanvas.SetActive(false);
+        ServerCanvas.SetActive(true);
 
     }
 

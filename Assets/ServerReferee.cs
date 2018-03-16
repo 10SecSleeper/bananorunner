@@ -14,7 +14,7 @@ public class ServerReferee : NetworkBehaviour {
     [SerializeField]
     PlayerTracker ptracker;
 
-    PlayerTracker.PlayerListInterface pinterface = new PlayerTracker.PlayerListInterface();
+    public PlayerTracker.PlayerListInterface pinterface = new PlayerTracker.PlayerListInterface();
 
 
     int timer = 0;

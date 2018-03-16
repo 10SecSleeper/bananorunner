@@ -12,7 +12,65 @@ public class PlayerTracker : NetworkBehaviour {
         {
             string toStore = ip + "|" + bananosEarned + "|" + redflags;
 
+            Debug.Log("Has key? " + PlayerPrefs.HasKey(wallet));
+
+            if (!PlayerPrefs.HasKey(wallet))
+            {
+                Debug.Log("We do not have this key yet. We must add it " + wallet);
+
+                string tmpWalletStore = "";
+
+                if (!PlayerPrefs.HasKey("AllWallets"))
+                {
+                    tmpWalletStore = wallet;
+                    PlayerPrefs.SetString("AllWallets", tmpWalletStore);
+                }
+                else if (PlayerPrefs.GetString("AllWallets") == wallet)
+                {
+
+                }
+                else
+                {
+                    tmpWalletStore = PlayerPrefs.GetString("AllWallets") + "|" + wallet;
+                    PlayerPrefs.SetString("AllWallets", tmpWalletStore);
+                } 
+            }
+
+
             PlayerPrefs.SetString(wallet, toStore);
+
+            
+            
+        }
+
+        public void RemovePlayerData(string wallet)
+        {
+
+            string[] wallets = PlayerPrefs.GetString("AllWallets").Split('|');
+            string tmpwallet = "";
+
+            for(int i = 0; i < wallets.Length; i++)
+            {
+
+                if (wallets[i] != wallet)
+                {
+                    tmpwallet += wallets[i];
+                }
+                else
+                {
+                    Debug.Log("Removing player with wallet " + wallet);
+                }
+
+                if (i > 0 && i != wallets.Length)
+                {
+                    tmpwallet += "|";
+                }
+
+            }
+
+            PlayerPrefs.SetString("AllWallets", tmpwallet);
+            PlayerPrefs.DeleteKey(wallet);
+
         }
 
         public string[] GetPlayerData(string wallet)
@@ -120,21 +178,19 @@ public class PlayerTracker : NetworkBehaviour {
     public class PlayerListInterface
     {
 
-        private List<PlayerContainer> container = new List<PlayerContainer>();
+        public List<PlayerContainer> container = new List<PlayerContainer>();
 
         public void AddPlayer(NetworkConnection conn, GameObject playerObj, int curTime, string ip, string wallet)
         {
 
             PlayerContainer tempP = new PlayerContainer();
+            PlayerDB db = new PlayerDB();
 
             tempP.SetupPlayerInfo(conn, playerObj, curTime, ip, wallet);
 
             container.Add(tempP);
 
-            PlayerDB db = new PlayerDB();
-            string playerCheck = db.GetPlayerData(wallet)[0];
-
-            if (playerCheck == "NULL")
+            if (!PlayerPrefs.HasKey(wallet))
             {
                 db.SavePlayerData(wallet, ip, "0", "0");
                 Debug.Log("New player added from " + ip + ". Their wallet is " + wallet);

@@ -7,11 +7,15 @@ public class MonkeyLogic : MonoBehaviour {
     [SerializeField]
     Umpire ump;
 
+    public bool colliding = false;
+
     void OnCollisionEnter(Collision col)
     {
 
         if (col.gameObject.GetComponent<ObstacleMover>() != null)
         {
+
+            colliding = true;
 
             if (col.gameObject.GetComponent<ObstacleMover>().banano)
             {
@@ -31,6 +35,14 @@ public class MonkeyLogic : MonoBehaviour {
 
     }
 
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.GetComponent<ObstacleMover>() != null)
+        {
+            colliding = false;
+        }
+    }
+
     // Use this for initialization
     void Start () {
 		
@@ -38,11 +50,6 @@ public class MonkeyLogic : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
-        if (transform.position.z > -2.5f)
-        {
-            transform.position = new Vector3(transform.position.x, transform.position.y, -2.45f);
-        }
 		
 	}
 }

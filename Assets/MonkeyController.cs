@@ -9,11 +9,13 @@ public class MonkeyController : MonoBehaviour {
     Rigidbody rb;
     [SerializeField]
     Animator anim;
+    MonkeyLogic logic;
 
     // Use this for initialization
     void Start () {
 
         rb = GetComponent<Rigidbody>();
+        logic = GetComponent<MonkeyLogic>();
 
 	}
 	
@@ -49,12 +51,17 @@ public class MonkeyController : MonoBehaviour {
 
     void Jump()
     {
-        rb.AddForce(new Vector3(0, 10f), ForceMode.Impulse);
+        rb.AddForce(new Vector3(0, 11f), ForceMode.Impulse);
     }
 
     void Move(int id)
     {
-        Vector3 tempPos = new Vector3(0, transform.position.y, transform.position.z);
+        Vector3 tempPos = new Vector3(0, transform.position.y, -2.5f);
+
+        if (logic.colliding == true)
+        {
+            tempPos.z = transform.position.z;
+        }
 
         switch (id)
         {
