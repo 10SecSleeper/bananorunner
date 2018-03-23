@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4033683510968654}
   - component: {fileID: 114159176042271870}
   - component: {fileID: 114455819366142762}
+  - component: {fileID: 114546267224642484}
   m_Layer: 0
   m_Name: Object Spawner
   m_TagString: ObjectSpawner
@@ -52,9 +53,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36b9193be9a184743852534148be0d59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallPrefab: {fileID: 1568715525372368, guid: 6d4c30958a5d9f9469993b24978361fe, type: 2}
-  pointsPrefab: {fileID: 1090349707094062, guid: a6f978f1f16c710479238ab4c63e6283,
-    type: 2}
   odict: {fileID: 114455819366142762}
 --- !u!114 &114455819366142762
 MonoBehaviour:
@@ -73,28 +71,115 @@ MonoBehaviour:
     impenetrable: 0
     interactive: 0
     banano: 0
-  - obj: {fileID: 1568715525372368, guid: 6d4c30958a5d9f9469993b24978361fe, type: 2}
-    name: Wall
+  - obj: {fileID: 1227612364856006, guid: 15091066b51a622499a5634f4e6ff5cd, type: 2}
+    name: BombBox
     impenetrable: 1
     interactive: 0
     banano: 0
-  - obj: {fileID: 1090349707094062, guid: a6f978f1f16c710479238ab4c63e6283, type: 2}
+  - obj: {fileID: 1378577943857536, guid: ffbfc0baa4cd5fc45bbbdadde041e0a9, type: 2}
     name: Banano
     impenetrable: 0
     interactive: 0
     banano: 1
-  - obj: {fileID: 1187682560147178, guid: 88026d27a6bd57c4eaf018bc7ebe77d0, type: 2}
+  - obj: {fileID: 1378577943857536, guid: ffbfc0baa4cd5fc45bbbdadde041e0a9, type: 2}
+    name: Banano
+    impenetrable: 0
+    interactive: 0
+    banano: 1
+  - obj: {fileID: 1378577943857536, guid: ffbfc0baa4cd5fc45bbbdadde041e0a9, type: 2}
+    name: Banano
+    impenetrable: 0
+    interactive: 0
+    banano: 1
+  - obj: {fileID: 1405473388343066, guid: eb6db5ff1a330a04cbfe7a50abb36bf5, type: 2}
     name: Fence
     impenetrable: 0
     interactive: 0
     banano: 0
-  - obj: {fileID: 0}
-    name: More Air
-    impenetrable: 0
-    interactive: 0
-    banano: 0
-  - obj: {fileID: 1529689851850622, guid: 241b5497f7c3b8d4f81796913d4008cd, type: 2}
-    name: CARLOS MATOS
+  - obj: {fileID: 1157712774206612, guid: 58e5a7bda7f60df47b87c39ba17441ef, type: 2}
+    name: MemeContainer
     impenetrable: 1
     interactive: 0
     banano: 0
+  - obj: {fileID: 1106142945910012, guid: 42bd07d2add12a744abd006533b50d92, type: 2}
+    name: Stone Tower
+    impenetrable: 1
+    interactive: 0
+    banano: 0
+  - obj: {fileID: 1287369965686078, guid: fbbc329d6dabc484c83985c9a23fc2c1, type: 2}
+    name: Burger Tower
+    impenetrable: 1
+    interactive: 0
+    banano: 0
+  - obj: {fileID: 1290521647244474, guid: 65475ae1003c8c54981d81c20fcc0f96, type: 2}
+    name: Bomb Box Bunch
+    impenetrable: 1
+    interactive: 0
+    banano: 0
+  - obj: {fileID: 0}
+    name: 
+    impenetrable: 0
+    interactive: 0
+    banano: 0
+--- !u!114 &114546267224642484
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1553166641090564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f43c998e2883f047861dc1a8108e5a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  memeDict:
+  - {fileID: 0}
+  - {fileID: 1529689851850622, guid: 241b5497f7c3b8d4f81796913d4008cd, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}

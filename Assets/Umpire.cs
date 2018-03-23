@@ -15,15 +15,19 @@ public class Umpire : MonoBehaviour {
             if (collision.gameObject.GetComponent<ObstacleMover>().banano)
             {
                 playercomm.CmdMissBanano();
+                Destroy(collision.gameObject);
             }
+            else
+                Destroy(collision.gameObject);
         }
 
         else if (collision.gameObject.name == "MonkeyPlayer")
         {
             playercomm.GameOver();
+            Destroy(collision.gameObject);
         }
-        
-        Destroy(collision.gameObject);
+
+        else return;
 
     }
 

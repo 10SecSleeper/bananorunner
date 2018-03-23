@@ -13,9 +13,6 @@ public class LevelStringAdapter : MonoBehaviour {
     int counter = 0;
     int counterMax = 0;
 
-    public GameObject wallPrefab;
-    public GameObject pointsPrefab;
-
     [SerializeField]
     ObstacleDictionary odict;
 
@@ -91,7 +88,8 @@ public class LevelStringAdapter : MonoBehaviour {
             if (toSpawn != null)
             {
                 toSpawn.transform.position = new Vector3(xPos, transform.position.y, transform.position.z);
-                toSpawn.GetComponent<ObstacleMover>().speed = speed;
+                if (toSpawn.GetComponent<ObstacleMover>() != null)
+                    toSpawn.GetComponent<ObstacleMover>().speed = speed;
                 Instantiate(toSpawn);
             }
 
