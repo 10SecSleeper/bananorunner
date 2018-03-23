@@ -11,6 +11,22 @@ public class MonkeyController : MonoBehaviour {
     Animator anim;
     MonkeyLogic logic;
 
+    [SerializeField]
+    Umpire ump;
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.GetComponent<ObstacleMover>() != null)
+        {
+            if (other.gameObject.GetComponent<ObstacleMover>().banano)
+            {
+                Debug.Log("TOUCHING BANANO!");
+                ump.CollectBanano();
+                Destroy(other.gameObject);
+            }
+        }
+    }
+
     // Use this for initialization
     void Start () {
 
