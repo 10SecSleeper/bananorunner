@@ -10,6 +10,11 @@ public class BananoNetManager : NetworkManager
     public GameObject ServerCanvas;
     public ServerReferee referee;
 
+    public bool gameOver = false;
+    public GameObject GameOverUI;
+    public GameObject ConnectingUI;
+    public GameObject DisconnectMsg;
+
     public string clientWallet;
 
     void Start()
@@ -64,6 +69,7 @@ public class BananoNetManager : NetworkManager
     public override void OnClientConnect(NetworkConnection conn)
     {
         base.OnClientConnect(conn);
+        ConnectingUI.SetActive(false);
     }
 
     public void StartAsServer()
@@ -89,7 +95,9 @@ public class BananoNetManager : NetworkManager
 
         StartClient();
 
+        GameOverUI.SetActive(false);
         UICanvas.SetActive(false);
+        ConnectingUI.SetActive(true);
 
     }
 
@@ -98,6 +106,20 @@ public class BananoNetManager : NetworkManager
         base.OnClientDisconnect(conn);
 
         UICanvas.SetActive(true);
+        ConnectingUI.SetActive(false);
+
+        if (!gameOver)
+        {
+            UICanvas.SetActive(true);
+            DisconnectMsg.SetActive(true);
+        }
+
+        if (gameOver)
+        {
+            GameOverUI.SetActive(true);
+            gameOver = false;
+        }
+
     }
 
 
@@ -105,7 +127,16 @@ public class BananoNetManager : NetworkManager
     {
         base.OnStopClient();
 
-        UICanvas.SetActive(true);
+        if (!gameOver)
+            UICanvas.SetActive(true);
+
+        if (gameOver)
+        {
+            GameOverUI.SetActive(true);
+            gameOver = false;
+        }
+
+        ConnectingUI.SetActive(false);
     }
 
 }

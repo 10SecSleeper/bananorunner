@@ -17,10 +17,14 @@ public class ScenerySpawner : MonoBehaviour {
 	void Start () {
 
         sd = GetComponentInParent<SceneryDictionary>();
-        InvokeRepeating("SecondUpdate", 1, 1);
-        timerMax = Random.Range(minTime, maxTime+1);
 
 	}
+
+    public void StartScenery()
+    {
+        InvokeRepeating("SecondUpdate", 1, 1);
+        timerMax = Random.Range(minTime, maxTime + 1);
+    }
 	
     void SecondUpdate()
     {

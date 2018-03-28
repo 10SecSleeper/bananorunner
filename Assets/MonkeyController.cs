@@ -14,6 +14,11 @@ public class MonkeyController : MonoBehaviour {
     [SerializeField]
     Umpire ump;
 
+    [SerializeField]
+    List<AudioClip> MonkeySounds = new List<AudioClip>();
+
+    AudioSource audplayer;
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.GetComponent<ObstacleMover>() != null)
@@ -28,10 +33,11 @@ public class MonkeyController : MonoBehaviour {
     }
 
     // Use this for initialization
-    void Start () {
+    void Awake () {
 
         rb = GetComponent<Rigidbody>();
         logic = GetComponent<MonkeyLogic>();
+        audplayer = GetComponent<AudioSource>();
 
 	}
 	
@@ -55,6 +61,7 @@ public class MonkeyController : MonoBehaviour {
         if (Input.GetButtonDown("Jump") && transform.position.y < 2.7f )
         {
             Jump();
+            MonkeySound();
         }
 
         if (transform.position.y > 2.7f)
@@ -64,6 +71,18 @@ public class MonkeyController : MonoBehaviour {
         else
             anim.SetBool("OnGround", true);
 	}
+
+    void MonkeySound()
+    {
+        if (MonkeySounds.Count > 0)
+        {
+            audplayer.Stop();
+            int r = Random.Range(0, MonkeySounds.Count);
+
+            audplayer.clip = MonkeySounds[r];
+            audplayer.Play();
+        }
+    }
 
     void Jump()
     {

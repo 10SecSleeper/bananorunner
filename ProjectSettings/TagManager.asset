@@ -9,6 +9,7 @@ TagManager:
   - Umpire
   - NetMan
   - Meme
+  - ScenerySpawner
   layers:
   - Default
   - TransparentFX

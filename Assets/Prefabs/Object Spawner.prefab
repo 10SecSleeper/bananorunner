@@ -116,8 +116,73 @@ MonoBehaviour:
     impenetrable: 1
     interactive: 0
     banano: 0
+  - obj: {fileID: 1265685863143470, guid: 306ce63f816023146ad1c45577db4a95, type: 2}
+    name: Forest Tower
+    impenetrable: 1
+    interactive: 0
+    banano: 0
+  - obj: {fileID: 1920945765612696, guid: 774a801cf1a896041a31180b23cc9506, type: 2}
+    name: Rocks1
+    impenetrable: 1
+    interactive: 0
+    banano: 0
+  - obj: {fileID: 1497832840966194, guid: 763613038dacb5442970bbf04682210f, type: 2}
+    name: Rocks 2
+    impenetrable: 1
+    interactive: 0
+    banano: 0
+  - obj: {fileID: 1566060689975108, guid: f172fc64d030ec74ab9d3f2657b40eee, type: 2}
+    name: Big Rock
+    impenetrable: 1
+    interactive: 0
+    banano: 0
+  - obj: {fileID: 1873293768057488, guid: f5c725831e7c27e4f8cfe309ab2a4c8d, type: 2}
+    name: Cacti1
+    impenetrable: 1
+    interactive: 0
+    banano: 0
+  - obj: {fileID: 1617809301979810, guid: c011f80140dae55489dcf1694110fbeb, type: 2}
+    name: Cacti2
+    impenetrable: 1
+    interactive: 0
+    banano: 0
+  - obj: {fileID: 1894327824024730, guid: 6b6b581ecedcd9348a4e147d7f3dd195, type: 2}
+    name: Cacti3
+    impenetrable: 1
+    interactive: 0
+    banano: 0
+  - obj: {fileID: 1739358274432186, guid: 922d49378f658674eaba03b34a70faec, type: 2}
+    name: Empty Web
+    impenetrable: 1
+    interactive: 0
+    banano: 0
+  - obj: {fileID: 1215103207437996, guid: ac9298e7d0ebafb4a913326f4b4f8154, type: 2}
+    name: Spike Wall
+    impenetrable: 1
+    interactive: 0
+    banano: 0
+  - obj: {fileID: 1825494819030964, guid: c74e7d5110ff1894caee704b059aa310, type: 2}
+    name: Snowman
+    impenetrable: 1
+    interactive: 0
+    banano: 0
+  - obj: {fileID: 1189192354719224, guid: a88d5797c702853449138dc7b76ae8e6, type: 2}
+    name: SpikeFloor
+    impenetrable: 0
+    interactive: 0
+    banano: 0
+  - obj: {fileID: 1560777203679966, guid: 3ba7e1db38e420e468dcc67b9d885694, type: 2}
+    name: SpiderNanners
+    impenetrable: 1
+    interactive: 0
+    banano: 0
+  - obj: {fileID: 1825494819030964, guid: c74e7d5110ff1894caee704b059aa310, type: 2}
+    name: Snowman
+    impenetrable: 1
+    interactive: 0
+    banano: 0
   - obj: {fileID: 0}
-    name: 
+    name: Fresh Air
     impenetrable: 0
     interactive: 0
     banano: 0

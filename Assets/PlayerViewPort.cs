@@ -12,6 +12,36 @@ public class PlayerViewPort : MonoBehaviour {
     [SerializeField]
     ServerReferee referee;
 
+    bool onlineMode;
+    int onlineCount;
+
+    void Awake()
+    {
+        onlineCount = referee.pinterface.container.Count;
+        InvokeRepeating("RefreshView", 0, 5f);
+    }
+
+    void FixedUpdate()
+    {
+        if (referee.pinterface.container.Count != onlineCount && onlineMode)
+        {
+            ShowOnlinePlayers();
+            onlineCount = referee.pinterface.container.Count;
+        }
+    }
+
+    void RefreshView()
+    {
+        if (onlineMode)
+        {
+            ShowOnlinePlayers();
+        }
+        else
+        {
+            ShowAllPlayers();
+        }
+    }
+
     public void ClearViewport()
     {
         if (containerObj.transform.childCount == 0)
@@ -26,6 +56,7 @@ public class PlayerViewPort : MonoBehaviour {
 
     public void ShowOnlinePlayers()
     {
+        onlineMode = true;
         ClearViewport();
 
         PlayerTracker.PlayerDB db = new PlayerTracker.PlayerDB();
@@ -47,6 +78,7 @@ public class PlayerViewPort : MonoBehaviour {
 
 	public void ShowAllPlayers()
     {
+        onlineMode = false;
         ClearViewport();
 
         PlayerTracker.PlayerDB db = new PlayerTracker.PlayerDB();

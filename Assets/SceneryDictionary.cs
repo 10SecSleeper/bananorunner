@@ -7,14 +7,17 @@ public class SceneryDictionary : MonoBehaviour {
     [SerializeField]
     public List<GameObject> SceneryDict = new List<GameObject>();
 
+    
+    public void StartScenery()
+    {
+        
+        foreach (ScenerySpawner s in GetComponentsInChildren<ScenerySpawner>())
+        {
+            s.StartScenery();
+        }
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+        GetComponent<AudioSource>().Play();
+
+    }
+
 }

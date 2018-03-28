@@ -23,12 +23,15 @@ public class BananoCommunicator : NetworkBehaviour {
         ump = GameObject.FindGameObjectWithTag("Umpire");
 
         ump.GetComponent<Umpire>().playercomm = this;
+
+        
     }
 
     public override void OnStartLocalPlayer()
     {
         base.OnStartLocalPlayer();
         CmdUpdateWallet(PlayerPrefs.GetString("LocalWallet"));
+        GameObject.FindGameObjectWithTag("ScenerySpawner").GetComponent<SceneryDictionary>().StartScenery();
     }
 
     [Command]
@@ -68,6 +71,8 @@ public class BananoCommunicator : NetworkBehaviour {
 
         Debug.Log("Game Over!");
         BananoNetManager netman = GameObject.FindGameObjectWithTag("NetMan").GetComponent<BananoNetManager>();
+
+        netman.gameOver = true;
 
         netman.StopClient();
     }

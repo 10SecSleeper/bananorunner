@@ -551,6 +551,7 @@ GameObject:
   - component: {fileID: 54362461993975402}
   - component: {fileID: 114750151578515440}
   - component: {fileID: 65530462574877816}
+  - component: {fileID: 82223907981484364}
   m_Layer: 0
   m_Name: MonkeyPlayer
   m_TagString: Untagged
@@ -10483,6 +10484,101 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.09, y: 2.11, z: 1}
   m_Center: {x: 0, y: 0, z: 1.05}
+--- !u!82 &82223907981484364
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1079284157041080}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 0.695
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.678
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!95 &95321496158259404
 Animator:
   serializedVersion: 3
@@ -10514,6 +10610,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anim: {fileID: 95321496158259404}
   ump: {fileID: 0}
+  MonkeySounds:
+  - {fileID: 8300000, guid: e91d52dcfec7d9c44b59ff519d458b8e, type: 3}
+  - {fileID: 8300000, guid: 23e029704664cc24d8981e3552808b93, type: 3}
+  - {fileID: 8300000, guid: 517ed9307eb498043ab5819fd7881965, type: 3}
+  - {fileID: 8300000, guid: 5bd2640b5d0965942889c7f83d0396d8, type: 3}
+  - {fileID: 8300000, guid: b02a2cc0d5f5c324b96370a89379b29f, type: 3}
+  - {fileID: 8300000, guid: e215abe66f1242e46b2403b6e2b6c587, type: 3}
+  - {fileID: 8300000, guid: e5afe52116ba27f4da57e6c5ba3b72a4, type: 3}
+  - {fileID: 8300000, guid: bb003dceaf1781349a45a4d91b24f579, type: 3}
 --- !u!114 &114750151578515440
 MonoBehaviour:
   m_ObjectHideFlags: 1

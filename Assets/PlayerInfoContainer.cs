@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class PlayerInfoContainer : MonoBehaviour {
 
     [SerializeField]
-    Text walletField;
+    InputField walletField;
     [SerializeField]
     Text ipField;
     [SerializeField]

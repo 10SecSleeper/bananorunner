@@ -14,8 +14,10 @@ public class ObstacleMover : MonoBehaviour {
     [SerializeField]
     public bool deadly;
 
+    Rigidbody rb;
+
 	// Use this for initialization
-	void Start () {
+	void Awake () {
 
 	}
 

@@ -38,7 +38,6 @@ GameObject:
   - component: {fileID: 4960633778618366}
   - component: {fileID: 114850525008717176}
   - component: {fileID: 65352520641020904}
-  - component: {fileID: 54408755794800752}
   m_Layer: 0
   m_Name: BombBox
   m_TagString: Untagged
@@ -118,21 +117,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1067688412442960}
   m_Mesh: {fileID: 4300000, guid: cfef0b8e0ebae6147a1df688296d30fc, type: 3}
---- !u!54 &54408755794800752
-Rigidbody:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1227612364856006}
-  serializedVersion: 2
-  m_Mass: 10
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 0
 --- !u!65 &65352520641020904
 BoxCollider:
   m_ObjectHideFlags: 1
