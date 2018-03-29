@@ -117,6 +117,7 @@ public class BananoNetManager : NetworkManager
         if (gameOver)
         {
             GameOverUI.SetActive(true);
+            GameOverUI.GetComponent<GameOverScreen>().SetBananos();
             gameOver = false;
         }
 
@@ -133,6 +134,7 @@ public class BananoNetManager : NetworkManager
         if (gameOver)
         {
             GameOverUI.SetActive(true);
+            GameOverUI.GetComponent<GameOverScreen>().SetBananos();
             gameOver = false;
         }
 

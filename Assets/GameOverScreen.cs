@@ -9,13 +9,11 @@ public class GameOverScreen : MonoBehaviour {
     Text Bananos;
 
 	// Use this for initialization
-	void Awake () {
-
-        SetBananos();
+	void Start () {
 		
 	}
 
-    void SetBananos()
+    public void SetBananos()
     {
         Bananos.text = PlayerPrefs.GetFloat("Bananos").ToString() + " Bananos";
     }

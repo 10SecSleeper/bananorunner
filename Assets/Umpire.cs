@@ -8,7 +8,7 @@ public class Umpire : MonoBehaviour {
     public BananoCommunicator playercomm;
     AudioSource audioplayer;
 
-    void Awake()
+    void Start()
     {
         PlayerPrefs.SetFloat("Bananos", 0);
         audioplayer = GetComponent<AudioSource>();
@@ -47,8 +47,11 @@ public class Umpire : MonoBehaviour {
         playercomm.CmdCollectBanano();
 
         float b = PlayerPrefs.GetFloat("Bananos");
+        b += 1;
 
-        PlayerPrefs.SetFloat("Bananos", b + 1f);
+        Debug.Log(b);
+
+        PlayerPrefs.SetFloat("Bananos", b);
 
         audioplayer.Play();
 

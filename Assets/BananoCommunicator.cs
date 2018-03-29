@@ -19,16 +19,16 @@ public class BananoCommunicator : NetworkBehaviour {
 
 	// Use this for initialization
 	void Awake () {
+  
+    }
+
+    public override void OnStartLocalPlayer()
+    {
         NetworkIdentity nw = GetComponent<NetworkIdentity>();
         ump = GameObject.FindGameObjectWithTag("Umpire");
 
         ump.GetComponent<Umpire>().playercomm = this;
 
-        
-    }
-
-    public override void OnStartLocalPlayer()
-    {
         base.OnStartLocalPlayer();
         CmdUpdateWallet(PlayerPrefs.GetString("LocalWallet"));
         GameObject.FindGameObjectWithTag("ScenerySpawner").GetComponent<SceneryDictionary>().StartScenery();

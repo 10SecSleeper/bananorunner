@@ -32,7 +32,9 @@ public class MainMenuValidator : MonoBehaviour {
     void ValidateWallet()
     {
 
-        if (walletInput.text.Length >= validLength)
+        string walID = PlayerPrefs.GetString("LocalWallet");
+
+        if (walID.Length == validLength)
         {
             startGame.interactable = true;
         }

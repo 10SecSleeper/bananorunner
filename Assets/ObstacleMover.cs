@@ -22,7 +22,7 @@ public class ObstacleMover : MonoBehaviour {
 	}
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         Vector3 newPos = transform.position - transform.forward * speed * Time.deltaTime;
 

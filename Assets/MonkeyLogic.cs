@@ -50,6 +50,11 @@ public class MonkeyLogic : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+        float z = Mathf.Clamp(transform.position.z, -20f, -2.5f);
+        Vector3 newPos = new Vector3(transform.position.x, transform.position.y, z);
+
+        transform.position = newPos;
 		
 	}
 }
