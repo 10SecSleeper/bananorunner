@@ -1,0 +1,571 @@
+fileFormatVersion: 2
+guid: db975a732f71da74fb17f2bf08fa1005
+timeCreated: 1510497739
+licenseType: Store
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Ctrl_ Right Foot
+    100002: Ctrl_General
+    100004: Ctrl_Head
+    100006: Ctrl_Left Arm01
+    100008: Ctrl_Left Arm02
+    100010: Ctrl_Left Big Toe01
+    100012: Ctrl_Left Big Toe02
+    100014: Ctrl_Left Big Toe03
+    100016: Ctrl_Left Eye01
+    100018: Ctrl_Left Femur
+    100020: Ctrl_Left Foot
+    100022: Ctrl_Left Hand01
+    100024: Ctrl_Left Index01
+    100026: Ctrl_Left Index02
+    100028: Ctrl_Left Index03
+    100030: Ctrl_Left Index04
+    100032: Ctrl_Left Leg
+    100034: Ctrl_Left Little Toe01
+    100036: Ctrl_Left Little Toe02
+    100038: Ctrl_Left Little Toe03
+    100040: Ctrl_Left Middle Toe01
+    100042: Ctrl_Left Middle Toe02
+    100044: Ctrl_Left Middle Toe03
+    100046: Ctrl_Left Middle01
+    100048: Ctrl_Left Middle02
+    100050: Ctrl_Left Middle03
+    100052: Ctrl_Left Middle04
+    100054: Ctrl_Left Pinky01
+    100056: Ctrl_Left Pinky02
+    100058: Ctrl_Left Pinky03
+    100060: Ctrl_Left Pinky04
+    100062: Ctrl_Left Ring01
+    100064: Ctrl_Left Ring02
+    100066: Ctrl_Left Ring03
+    100068: Ctrl_Left Ring04
+    100070: Ctrl_Left Thumb01
+    100072: Ctrl_Left Thumb02
+    100074: Ctrl_Left Toe01
+    100076: Ctrl_Left Toe02
+    100078: Ctrl_Left Toe03
+    100080: Ctrl_Low Jaw
+    100082: Ctrl_Right Arm01
+    100084: Ctrl_Right Arm02
+    100086: Ctrl_Right Big Toe01
+    100088: Ctrl_Right Big Toe02
+    100090: Ctrl_Right Big Toe03
+    100092: Ctrl_Right Eye01
+    100094: Ctrl_Right Femur
+    100096: Ctrl_Right Hand01
+    100098: Ctrl_Right Index01
+    100100: Ctrl_Right Index02
+    100102: Ctrl_Right Index03
+    100104: Ctrl_Right Index04
+    100106: Ctrl_Right Leg
+    100108: Ctrl_Right Little Toe
+    100110: Ctrl_Right Little Toe01
+    100112: Ctrl_Right Little Toe02
+    100114: Ctrl_Right Middle Toe01
+    100116: Ctrl_Right Middle Toe02
+    100118: Ctrl_Right Middle Toe03
+    100120: Ctrl_Right Middle01
+    100122: Ctrl_Right Middle02
+    100124: Ctrl_Right Middle03
+    100126: Ctrl_Right Middle04
+    100128: Ctrl_Right Pinky01
+    100130: Ctrl_Right Pinky02
+    100132: Ctrl_Right Pinky03
+    100134: Ctrl_Right Pinky04
+    100136: Ctrl_Right Ring01
+    100138: Ctrl_Right Ring02
+    100140: Ctrl_Right Ring03
+    100142: Ctrl_Right Ring04
+    100144: Ctrl_Right Thumb01
+    100146: Ctrl_Right Thumb02
+    100148: Ctrl_Right Toe01
+    100150: Ctrl_Right Toe02
+    100152: Ctrl_Right Toe03
+    100154: Ctrl_Spine01
+    100156: Ctrl_Spine02
+    100158: Ctrl_Spine03
+    100160: Ctrl_Spine04
+    100162: Ctrl_Spine05
+    100164: Ctrl_Spine06
+    100166: Ctrl_Tai12
+    100168: Ctrl_Tail01
+    100170: Ctrl_Tail02
+    100172: Ctrl_Tail03
+    100174: Ctrl_Tail04
+    100176: Ctrl_Tail05
+    100178: Ctrl_Tail06
+    100180: Ctrl_Tail07
+    100182: Ctrl_Tail08
+    100184: Ctrl_Tail09
+    100186: Ctrl_Tail10
+    100188: Ctrl_Tail11
+    100190: Ctrl_Tail13
+    100192: Ctrl_Tail14
+    100194: Ctrl_Tail15
+    100196: Ctrl_Tail16
+    100198: Ctrl_Tail17
+    100200: Ctrl_Tail18
+    100202: Ctrl_Tail19
+    100204: Ctrl_Tail20
+    100206: Ctrl_Tail21
+    100208: Ctrl_Tail22
+    100210: Ctrl_Tail23
+    100212: Ctrl_Upper Jaw
+    100214: Foot Left Point Helper
+    100216: Foot Right Point Helper
+    100218: Head jnt
+    100220: Head Tip jnt
+    100222: IK Chain001
+    100224: IK Chain003
+    100226: IK Chain005
+    100228: IK Chain006
+    100230: Left Arm01 jnt
+    100232: Left Arm02 jnt
+    100234: Left Big Toe Tip jnt
+    100236: Left Big Toe01 jnt
+    100238: Left Big Toe02 jnt
+    100240: Left Big Toe03 jnt
+    100242: Left Eye Tip jnt
+    100244: Left Eye01 jnt
+    100246: Left Foot jnt
+    100248: Left Hand01 jnt
+    100250: Left Index Tip jnt
+    100252: Left Index01 jnt
+    100254: Left Index02 jnt
+    100256: Left Index03 jnt
+    100258: Left Index04 jnt
+    100260: Left Leg01 jnt
+    100262: Left Leg02 jnt
+    100264: Left Leg03 jnt
+    100266: Left Little Toe Tip jnt
+    100268: Left Little Toe01 jnt
+    100270: Left Little Toe02 jnt
+    100272: Left Little Toe03 jnt
+    100274: Left Middle Tip jnt
+    100276: Left Middle Toe Tip jnt
+    100278: Left Middle Toe01 jnt
+    100280: Left Middle Toe02 jnt
+    100282: Left Middle Toe03 jnt
+    100284: Left Middle01 jnt
+    100286: Left Middle02 jnt
+    100288: Left Middle03 jnt
+    100290: Left Middle04 jnt
+    100292: Left Pinky Tip jnt
+    100294: Left Pinky01 jnt
+    100296: Left Pinky02 jnt
+    100298: Left Pinky03 jnt
+    100300: Left Pinky04 jnt
+    100302: Left Ring Tip jnt
+    100304: Left Ring01 jnt
+    100306: Left Ring02 jnt
+    100308: Left Ring03 jnt
+    100310: Left Ring04 jnt
+    100312: Left Thumb Tip jnt
+    100314: Left Thumb01 jnt
+    100316: Left Thumb02 jnt
+    100318: Left Toe Tip jnt
+    100320: Left Toe01 jnt
+    100322: Left Toe02 jnt
+    100324: Left Toe03 jnt
+    100326: Low Jaw Tip jnt
+    100328: Low Jaw01 jnt
+    100330: Monkey
+    100332: //RootNode
+    100334: Right Arm01 jnt
+    100336: Right Arm02 jnt
+    100338: Right Big Toe Tip jnt
+    100340: Right Big Toe01 jnt
+    100342: Right Big Toe02 jnt
+    100344: Right Big Toe03 jnt
+    100346: Right Eye Tip jnt
+    100348: Right Eye01 jnt
+    100350: Right Foot jnt
+    100352: Right Hand01 jnt
+    100354: Right Index Tip jnt
+    100356: Right Index01 jnt
+    100358: Right Index02 jnt
+    100360: Right Index03 jnt
+    100362: Right Index04 jnt
+    100364: Right Leg01 jnt
+    100366: Right Leg02 jnt
+    100368: Right Leg03 jnt
+    100370: Right Little Toe Tip jnt
+    100372: Right Little Toe01 jnt
+    100374: Right Little Toe02 jnt
+    100376: Right Little Toe03 jnt
+    100378: Right Middle Tip jnt
+    100380: Right Middle Toe Tip jnt
+    100382: Right Middle Toe01 jnt
+    100384: Right Middle Toe02 jnt
+    100386: Right Middle Toe03 jnt
+    100388: Right Middle01 jnt
+    100390: Right Middle02 jnt
+    100392: Right Middle03 jnt
+    100394: Right Middle04 jnt
+    100396: Right Pinky Tip jnt
+    100398: Right Pinky01 jnt
+    100400: Right Pinky02 jnt
+    100402: Right Pinky03 jnt
+    100404: Right Pinky04 jnt
+    100406: Right Ring Tip jnt
+    100408: Right Ring01 jnt
+    100410: Right Ring02 jnt
+    100412: Right Ring03 jnt
+    100414: Right Ring04 jnt
+    100416: Right Thumb Tip jnt
+    100418: Right Thumb01 jnt
+    100420: Right Thumb02 jnt
+    100422: Right Toe Tip jnt
+    100424: Right Toe01 jnt
+    100426: Right Toe02 jnt
+    100428: Right Toe03 jnt
+    100430: Root Point Helper
+    100432: Spine01 jnt
+    100434: Spine02 jnt
+    100436: Spine03 jnt
+    100438: Spine04 jnt
+    100440: Spine05 jnt
+    100442: Spine06 jnt
+    100444: Tail Tip jnt
+    100446: Tail01 jnt
+    100448: Tail02 jnt
+    100450: Tail03 jnt
+    100452: Tail04 jnt
+    100454: Tail05 jnt
+    100456: Tail06 jnt
+    100458: Tail07 jnt
+    100460: Tail08 jnt
+    100462: Tail09 jnt
+    100464: Tail10 jnt
+    100466: Tail11 jnt
+    100468: Tail12 jnt
+    100470: Tail13 jnt
+    100472: Tail14 jnt
+    100474: Tail15 jnt
+    100476: Tail16 jnt
+    100478: Tail17 jnt
+    100480: Tail18 jnt
+    100482: Tail19 jnt
+    100484: Tail20 jnt
+    100486: Tail21 jnt
+    100488: Tail22 jnt
+    100490: Tail23 jnt
+    100492: Upper Jaw Tip jnt
+    100494: Upper Jaw01 jnt
+    400000: Ctrl_ Right Foot
+    400002: Ctrl_General
+    400004: Ctrl_Head
+    400006: Ctrl_Left Arm01
+    400008: Ctrl_Left Arm02
+    400010: Ctrl_Left Big Toe01
+    400012: Ctrl_Left Big Toe02
+    400014: Ctrl_Left Big Toe03
+    400016: Ctrl_Left Eye01
+    400018: Ctrl_Left Femur
+    400020: Ctrl_Left Foot
+    400022: Ctrl_Left Hand01
+    400024: Ctrl_Left Index01
+    400026: Ctrl_Left Index02
+    400028: Ctrl_Left Index03
+    400030: Ctrl_Left Index04
+    400032: Ctrl_Left Leg
+    400034: Ctrl_Left Little Toe01
+    400036: Ctrl_Left Little Toe02
+    400038: Ctrl_Left Little Toe03
+    400040: Ctrl_Left Middle Toe01
+    400042: Ctrl_Left Middle Toe02
+    400044: Ctrl_Left Middle Toe03
+    400046: Ctrl_Left Middle01
+    400048: Ctrl_Left Middle02
+    400050: Ctrl_Left Middle03
+    400052: Ctrl_Left Middle04
+    400054: Ctrl_Left Pinky01
+    400056: Ctrl_Left Pinky02
+    400058: Ctrl_Left Pinky03
+    400060: Ctrl_Left Pinky04
+    400062: Ctrl_Left Ring01
+    400064: Ctrl_Left Ring02
+    400066: Ctrl_Left Ring03
+    400068: Ctrl_Left Ring04
+    400070: Ctrl_Left Thumb01
+    400072: Ctrl_Left Thumb02
+    400074: Ctrl_Left Toe01
+    400076: Ctrl_Left Toe02
+    400078: Ctrl_Left Toe03
+    400080: Ctrl_Low Jaw
+    400082: Ctrl_Right Arm01
+    400084: Ctrl_Right Arm02
+    400086: Ctrl_Right Big Toe01
+    400088: Ctrl_Right Big Toe02
+    400090: Ctrl_Right Big Toe03
+    400092: Ctrl_Right Eye01
+    400094: Ctrl_Right Femur
+    400096: Ctrl_Right Hand01
+    400098: Ctrl_Right Index01
+    400100: Ctrl_Right Index02
+    400102: Ctrl_Right Index03
+    400104: Ctrl_Right Index04
+    400106: Ctrl_Right Leg
+    400108: Ctrl_Right Little Toe
+    400110: Ctrl_Right Little Toe01
+    400112: Ctrl_Right Little Toe02
+    400114: Ctrl_Right Middle Toe01
+    400116: Ctrl_Right Middle Toe02
+    400118: Ctrl_Right Middle Toe03
+    400120: Ctrl_Right Middle01
+    400122: Ctrl_Right Middle02
+    400124: Ctrl_Right Middle03
+    400126: Ctrl_Right Middle04
+    400128: Ctrl_Right Pinky01
+    400130: Ctrl_Right Pinky02
+    400132: Ctrl_Right Pinky03
+    400134: Ctrl_Right Pinky04
+    400136: Ctrl_Right Ring01
+    400138: Ctrl_Right Ring02
+    400140: Ctrl_Right Ring03
+    400142: Ctrl_Right Ring04
+    400144: Ctrl_Right Thumb01
+    400146: Ctrl_Right Thumb02
+    400148: Ctrl_Right Toe01
+    400150: Ctrl_Right Toe02
+    400152: Ctrl_Right Toe03
+    400154: Ctrl_Spine01
+    400156: Ctrl_Spine02
+    400158: Ctrl_Spine03
+    400160: Ctrl_Spine04
+    400162: Ctrl_Spine05
+    400164: Ctrl_Spine06
+    400166: Ctrl_Tai12
+    400168: Ctrl_Tail01
+    400170: Ctrl_Tail02
+    400172: Ctrl_Tail03
+    400174: Ctrl_Tail04
+    400176: Ctrl_Tail05
+    400178: Ctrl_Tail06
+    400180: Ctrl_Tail07
+    400182: Ctrl_Tail08
+    400184: Ctrl_Tail09
+    400186: Ctrl_Tail10
+    400188: Ctrl_Tail11
+    400190: Ctrl_Tail13
+    400192: Ctrl_Tail14
+    400194: Ctrl_Tail15
+    400196: Ctrl_Tail16
+    400198: Ctrl_Tail17
+    400200: Ctrl_Tail18
+    400202: Ctrl_Tail19
+    400204: Ctrl_Tail20
+    400206: Ctrl_Tail21
+    400208: Ctrl_Tail22
+    400210: Ctrl_Tail23
+    400212: Ctrl_Upper Jaw
+    400214: Foot Left Point Helper
+    400216: Foot Right Point Helper
+    400218: Head jnt
+    400220: Head Tip jnt
+    400222: IK Chain001
+    400224: IK Chain003
+    400226: IK Chain005
+    400228: IK Chain006
+    400230: Left Arm01 jnt
+    400232: Left Arm02 jnt
+    400234: Left Big Toe Tip jnt
+    400236: Left Big Toe01 jnt
+    400238: Left Big Toe02 jnt
+    400240: Left Big Toe03 jnt
+    400242: Left Eye Tip jnt
+    400244: Left Eye01 jnt
+    400246: Left Foot jnt
+    400248: Left Hand01 jnt
+    400250: Left Index Tip jnt
+    400252: Left Index01 jnt
+    400254: Left Index02 jnt
+    400256: Left Index03 jnt
+    400258: Left Index04 jnt
+    400260: Left Leg01 jnt
+    400262: Left Leg02 jnt
+    400264: Left Leg03 jnt
+    400266: Left Little Toe Tip jnt
+    400268: Left Little Toe01 jnt
+    400270: Left Little Toe02 jnt
+    400272: Left Little Toe03 jnt
+    400274: Left Middle Tip jnt
+    400276: Left Middle Toe Tip jnt
+    400278: Left Middle Toe01 jnt
+    400280: Left Middle Toe02 jnt
+    400282: Left Middle Toe03 jnt
+    400284: Left Middle01 jnt
+    400286: Left Middle02 jnt
+    400288: Left Middle03 jnt
+    400290: Left Middle04 jnt
+    400292: Left Pinky Tip jnt
+    400294: Left Pinky01 jnt
+    400296: Left Pinky02 jnt
+    400298: Left Pinky03 jnt
+    400300: Left Pinky04 jnt
+    400302: Left Ring Tip jnt
+    400304: Left Ring01 jnt
+    400306: Left Ring02 jnt
+    400308: Left Ring03 jnt
+    400310: Left Ring04 jnt
+    400312: Left Thumb Tip jnt
+    400314: Left Thumb01 jnt
+    400316: Left Thumb02 jnt
+    400318: Left Toe Tip jnt
+    400320: Left Toe01 jnt
+    400322: Left Toe02 jnt
+    400324: Left Toe03 jnt
+    400326: Low Jaw Tip jnt
+    400328: Low Jaw01 jnt
+    400330: Monkey
+    400332: //RootNode
+    400334: Right Arm01 jnt
+    400336: Right Arm02 jnt
+    400338: Right Big Toe Tip jnt
+    400340: Right Big Toe01 jnt
+    400342: Right Big Toe02 jnt
+    400344: Right Big Toe03 jnt
+    400346: Right Eye Tip jnt
+    400348: Right Eye01 jnt
+    400350: Right Foot jnt
+    400352: Right Hand01 jnt
+    400354: Right Index Tip jnt
+    400356: Right Index01 jnt
+    400358: Right Index02 jnt
+    400360: Right Index03 jnt
+    400362: Right Index04 jnt
+    400364: Right Leg01 jnt
+    400366: Right Leg02 jnt
+    400368: Right Leg03 jnt
+    400370: Right Little Toe Tip jnt
+    400372: Right Little Toe01 jnt
+    400374: Right Little Toe02 jnt
+    400376: Right Little Toe03 jnt
+    400378: Right Middle Tip jnt
+    400380: Right Middle Toe Tip jnt
+    400382: Right Middle Toe01 jnt
+    400384: Right Middle Toe02 jnt
+    400386: Right Middle Toe03 jnt
+    400388: Right Middle01 jnt
+    400390: Right Middle02 jnt
+    400392: Right Middle03 jnt
+    400394: Right Middle04 jnt
+    400396: Right Pinky Tip jnt
+    400398: Right Pinky01 jnt
+    400400: Right Pinky02 jnt
+    400402: Right Pinky03 jnt
+    400404: Right Pinky04 jnt
+    400406: Right Ring Tip jnt
+    400408: Right Ring01 jnt
+    400410: Right Ring02 jnt
+    400412: Right Ring03 jnt
+    400414: Right Ring04 jnt
+    400416: Right Thumb Tip jnt
+    400418: Right Thumb01 jnt
+    400420: Right Thumb02 jnt
+    400422: Right Toe Tip jnt
+    400424: Right Toe01 jnt
+    400426: Right Toe02 jnt
+    400428: Right Toe03 jnt
+    400430: Root Point Helper
+    400432: Spine01 jnt
+    400434: Spine02 jnt
+    400436: Spine03 jnt
+    400438: Spine04 jnt
+    400440: Spine05 jnt
+    400442: Spine06 jnt
+    400444: Tail Tip jnt
+    400446: Tail01 jnt
+    400448: Tail02 jnt
+    400450: Tail03 jnt
+    400452: Tail04 jnt
+    400454: Tail05 jnt
+    400456: Tail06 jnt
+    400458: Tail07 jnt
+    400460: Tail08 jnt
+    400462: Tail09 jnt
+    400464: Tail10 jnt
+    400466: Tail11 jnt
+    400468: Tail12 jnt
+    400470: Tail13 jnt
+    400472: Tail14 jnt
+    400474: Tail15 jnt
+    400476: Tail16 jnt
+    400478: Tail17 jnt
+    400480: Tail18 jnt
+    400482: Tail19 jnt
+    400484: Tail20 jnt
+    400486: Tail21 jnt
+    400488: Tail22 jnt
+    400490: Tail23 jnt
+    400492: Upper Jaw Tip jnt
+    400494: Upper Jaw01 jnt
+    4300000: Monkey
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: Monkey
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: Ctrl_General
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

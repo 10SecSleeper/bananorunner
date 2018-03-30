@@ -16,6 +16,9 @@ public class LevelStringAdapter : MonoBehaviour {
     [SerializeField]
     ObstacleDictionary odict;
 
+    [SerializeField]
+    GameObject checkmarkPrefab;
+
     int blocksize;
     float sepTime;
     float speed;
@@ -54,6 +57,13 @@ public class LevelStringAdapter : MonoBehaviour {
         if (counter == counterMax)
         {
             CancelInvoke("SpawnObstacleLine");
+
+            GameObject spawnMe = checkmarkPrefab;
+            spawnMe.GetComponent<ObstacleMover>().speed = speed;
+            spawnMe.transform.position = transform.position;
+            Instantiate(spawnMe);
+            
+
             return;
         }
         lineDecoder = obstacleLineBuffer[counter].Split(',');

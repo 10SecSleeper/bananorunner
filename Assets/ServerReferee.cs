@@ -121,7 +121,7 @@ public class ServerReferee : NetworkBehaviour {
 
             pinterface.GetPlayerContainer(p.Key).SetGivenBananos(tempIndex.bananos);
 
-            p.Value.GetComponent<BananoCommunicator>().TargetReceiveMessage(p.Key, tempIndex.generated, blocksize, (timelimit - 6) / blocksize, speed);
+            p.Value.GetComponent<BananoCommunicator>().TargetReceiveMessage(p.Key, tempIndex.generated, blocksize, (timelimit - 2) / blocksize, speed);
 
         }
 

@@ -25,10 +25,14 @@ public class MonkeyController : MonoBehaviour {
         {
             if (other.gameObject.GetComponent<ObstacleMover>().banano)
             {
-                Debug.Log("TOUCHING BANANO!");
                 ump.CollectBanano();
                 Destroy(other.gameObject);
             }
+            else if (other.gameObject.tag == "CheckPoint")
+            {
+                ump.CheckPoint();
+            }
+
         }
     }
 
@@ -61,16 +65,19 @@ public class MonkeyController : MonoBehaviour {
         if (Input.GetButtonDown("Jump") && transform.position.y < 2.7f )
         {
             Jump();
-            MonkeySound();
         }
 
         if (transform.position.y > 2.7f)
         {
-            anim.SetBool("OnGround", false);
+            anim.SetBool("run", false);
+            anim.SetBool("hop", true);
         }
         else
-            anim.SetBool("OnGround", true);
-	}
+        {
+            anim.SetBool("hop", false);
+            anim.SetBool("run", true);
+        }
+    }
 
     void MonkeySound()
     {
@@ -87,6 +94,7 @@ public class MonkeyController : MonoBehaviour {
     void Jump()
     {
         rb.AddForce(new Vector3(0, 11f), ForceMode.Impulse);
+        MonkeySound();
     }
 
     void Move(int id)
@@ -113,12 +121,22 @@ public class MonkeyController : MonoBehaviour {
 
         transform.position = Vector3.SmoothDamp(transform.position, tempPos, ref velocity, 0.3f);
 
-        if (Mathf.Abs(transform.position.x) < Mathf.Abs(tempPos.x) - 0.86f && id != 0)
+        if (id == 1 && transform.position.x > -2.0f)
         {
-            anim.SetFloat("Turn", tempPos.x / 4, 0.1f, Time.deltaTime);
+            anim.SetBool("run", false);
+            anim.SetBool("runleft", true);
+        }
+        else if (id == 2 && transform.position.x < 2.0f)
+        {
+            anim.SetBool("run", false);
+            anim.SetBool("runright", true);
         }
         else
-            anim.SetFloat("Turn", 0, 0.1f, Time.deltaTime);
-        
+        {
+            anim.SetBool("runleft", false);
+            anim.SetBool("runright", false);
+            anim.SetBool("run", true);
+        }
+
     }
 }

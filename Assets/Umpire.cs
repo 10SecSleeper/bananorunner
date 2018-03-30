@@ -8,6 +8,9 @@ public class Umpire : MonoBehaviour {
     public BananoCommunicator playercomm;
     AudioSource audioplayer;
 
+    [SerializeField]
+    ScoreUIManager scoremanager;
+
     void Start()
     {
         PlayerPrefs.SetFloat("Bananos", 0);
@@ -46,12 +49,7 @@ public class Umpire : MonoBehaviour {
     {
         playercomm.CmdCollectBanano();
 
-        float b = PlayerPrefs.GetFloat("Bananos");
-        b += 1;
-
-        Debug.Log(b);
-
-        PlayerPrefs.SetFloat("Bananos", b);
+        scoremanager.AddPoint();
 
         audioplayer.Play();
 
@@ -60,6 +58,11 @@ public class Umpire : MonoBehaviour {
     public void EndGame()
     {
         playercomm.GameOver();
+    }
+
+    public void CheckPoint()
+    {
+        scoremanager.TallyPoints();
     }
 
 }

@@ -41,4 +41,9 @@ public class MainMenuValidator : MonoBehaviour {
         else startGame.interactable = false;
 
     }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
 }

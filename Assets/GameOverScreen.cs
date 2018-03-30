@@ -15,7 +15,13 @@ public class GameOverScreen : MonoBehaviour {
 
     public void SetBananos()
     {
-        Bananos.text = PlayerPrefs.GetFloat("Bananos").ToString() + " Bananos";
+        Bananos.text = PlayerPrefs.GetInt("Bananos").ToString() + " Bananos";
+        PlayerPrefs.SetInt("Bananos", 0);
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 
 }

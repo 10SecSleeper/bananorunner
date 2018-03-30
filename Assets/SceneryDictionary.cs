@@ -7,9 +7,14 @@ public class SceneryDictionary : MonoBehaviour {
     [SerializeField]
     public List<GameObject> SceneryDict = new List<GameObject>();
 
+    [SerializeField]
+    GameObject inGameUI;
+
     
     public void StartScenery()
     {
+
+        inGameUI.SetActive(true);
         
         foreach (ScenerySpawner s in GetComponentsInChildren<ScenerySpawner>())
         {

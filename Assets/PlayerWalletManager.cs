@@ -7,8 +7,6 @@ public class PlayerWalletManager : MonoBehaviour {
     public void WriteLocalWallet(string wallet)
     {
         PlayerPrefs.SetString("LocalWallet", wallet);
-
-        Debug.Log(PlayerPrefs.GetString("LocalWallet"));
     }
 
     public void ClearAllData()

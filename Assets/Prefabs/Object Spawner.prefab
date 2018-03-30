@@ -54,6 +54,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   odict: {fileID: 114455819366142762}
+  checkmarkPrefab: {fileID: 1445121166353948, guid: a61d08c30ffa71247a685eaf92289b60,
+    type: 2}
 --- !u!114 &114455819366142762
 MonoBehaviour:
   m_ObjectHideFlags: 1

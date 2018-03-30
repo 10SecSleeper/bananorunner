@@ -10,6 +10,8 @@ TagManager:
   - NetMan
   - Meme
   - ScenerySpawner
+  - CheckPoint
+  - InGameUI
   layers:
   - Default
   - TransparentFX
