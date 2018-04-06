@@ -1,7 +1,7 @@
 # BANANO RUNNER.
 
-Soon-to-be faucet for Banano.
+Faucet game for distributing Banano Currency! :)
 
 
 Package Name: com.MCairns.BananoRunner
-Package Version: 0.0.1
+Package Version: 1.1final

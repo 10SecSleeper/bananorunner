@@ -84,4 +84,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd08c8f7407853b45a271e986ec07257, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  randomSeed: HI THERE BUDDY!
+  localGameVersion: rc1
+  netGameVersion: 
+  objectSpawner: {fileID: 0}
+  bananosCollected: 0
+  bananosMissed: 0
+  netWallet: 

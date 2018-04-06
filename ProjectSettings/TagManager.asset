@@ -12,6 +12,7 @@ TagManager:
   - ScenerySpawner
   - CheckPoint
   - InGameUI
+  - Floor
   layers:
   - Default
   - TransparentFX
