@@ -2,94 +2,259 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
+using UnityEngine.SceneManagement;
+using TMPro;
+using UnityEngine.UI;
+using SimpleJSON;
 
-public class BananoCommunicator : NetworkBehaviour {
+public class BananoCommunicator : MonoBehaviour {
+
+    // Game tracking vars
+    private int bananosCollected = 0;
+    private int bananosMissed = 0;
+
+
+    // UI Elements
+    [SerializeField]
+    GameObject gameOverUI;
 
     [SerializeField]
-    private string localGameVersion = "b3";
+    GameObject connectingUI;
 
-    [SyncVar]
-    public string netGameVersion = "";
+    [SerializeField]
+    GameObject captchaUI;
+    [SerializeField]
+    Text captchaText;
 
-    public GameObject objectSpawner;
-    GameObject ump;
+    [SerializeField]
+    GameObject errorUI;
+    [SerializeField]
+    Text errorText;
 
-    public int bananosCollected = 0;
+    [SerializeField]
+    GameObject scoreUI;
+    ScoreUIManager sM;
 
-    public int bananosMissed = 0;
+    [SerializeField]
+    GameObject SceneryObj;
 
-    public string netWallet = "";
+    [SerializeField]
+    LevelStringAdapter lsa;
 
-	// Use this for initialization
-	void Awake () {
-  
-    }
+    System.Action<JSONNode> validationGot;
+    System.Action<JSONNode> gamepacketGot;
 
-    public override void OnStartLocalPlayer()
+    string rootURL = "http://localhost:8000";
+    string validationURL = "/amivalid";
+    string captchaURL = "/robochecker";
+    string packetURL = "/gamepacket";
+
+    public class ErrorCode
     {
-        NetworkIdentity nw = GetComponent<NetworkIdentity>();
-        ump = GameObject.FindGameObjectWithTag("Umpire");
+        public int code;
+        public string message;
 
-        ump.GetComponent<Umpire>().playercomm = this;
-
-        base.OnStartLocalPlayer();
-
-        CmdBroadcastVersion(localGameVersion);
-        CmdUpdateWallet(PlayerPrefs.GetString("LocalWallet"));
-        GameObject.FindGameObjectWithTag("ScenerySpawner").GetComponent<SceneryDictionary>().StartScenery();
+        public ErrorCode(int i, string m)
+        {
+            this.code = i;
+            this.message = m;
+        }
     }
 
-    [Command]
-    void CmdBroadcastVersion(string v)
+    private void Start()
     {
-        netGameVersion = v;
+        sM = scoreUI.GetComponent<ScoreUIManager>();
+        validationGot += ValidationReceipt;
+        gamepacketGot += GamePacketReceipt;
+
+        // Send out a packet to the server telling it we have started our game.
+        StartCoroutine(ValidateClient(rootURL + validationURL, PlayerPrefs.GetString("LocalWallet"), ScoreKeeper.gameVersion, validationGot));
     }
 
-    [Command]
-    void CmdUpdateWallet(string w)
+    // A coroutine which loads data from the json url set in vars
+    public static IEnumerator ValidateClient(string url, string wallet, string gameversion, System.Action<SimpleJSON.JSONNode> action)
     {
-        netWallet = w;
+        WWWForm wwwf = new WWWForm();
+        wwwf.AddField("wallet", wallet);
+        wwwf.AddField("version", gameversion);
+
+        UnityWebRequest www = UnityWebRequest.Post(url, wwwf);
+        yield return www.SendWebRequest();
+
+        if (www.isDone)
+        {
+            if (string.IsNullOrEmpty(www.error))
+            {
+                var N = JSONNode.Parse(www.downloadHandler.text);
+
+                action(N);
+            }
+            else
+            {
+                var error = new ErrorCode(2, "The server could not be reached right now. Please try again later!");
+
+                Debug.Log(JsonUtility.ToJson(error));
+
+                action(JSONNode.Parse(JsonUtility.ToJson(error)));
+
+            }
+        }
     }
 
-	// Update is called once per frame
-	void Update () {
-		
-	}
-
-    [TargetRpc]
-    public void TargetReceiveMessage(NetworkConnection target, string msg, int blocksize, float separationTime, float speed)
+    // A coroutine that sends in game data and grabs new blocks.
+    public static IEnumerator SendGamePacket(string url, int collected, int missed, string wallet, string gameversion, System.Action<JSONNode> action)
     {
-        Debug.Log(separationTime);
+        Debug.Log("Sending game packet...");
 
-        bananosCollected = 0;
-        bananosMissed = 0;
+        WWWForm wwwf = new WWWForm();
+        wwwf.AddField("wallet", wallet);
+        wwwf.AddField("version", gameversion);
+        wwwf.AddField("collected", collected.ToString());
+        wwwf.AddField("missed", missed.ToString());
 
-        objectSpawner = GameObject.FindGameObjectWithTag("ObjectSpawner");
-        objectSpawner.GetComponent<LevelStringAdapter>().ReceiveNewBlock(msg, blocksize, separationTime, speed);
+        UnityWebRequest www = UnityWebRequest.Post(url, wwwf);
+        yield return www.SendWebRequest();
 
+        if (www.isDone)
+        {
+            if (string.IsNullOrEmpty(www.error))
+            {
+                var N = JSONNode.Parse(www.downloadHandler.text);
+
+                action(N);
+            }
+            else
+            {
+                var error = new ErrorCode(2, "The server could not be reached right now. Please try again later!");
+                action(JSONNode.Parse(JsonUtility.ToJson(error)));
+            }
+        }
     }
 
-    [Command]
-    public void CmdCollectBanano()
+    public void CollectBanano()
     {
         bananosCollected += 1;
     }
 
-    [Command]
-    public void CmdMissBanano()
+    public void MissBanano()
     {
         bananosMissed += 1;
     }
 
     public void GameOver()
     {
+        ScoreKeeper.gameOver = true;
+        QuitGame();
+    }
 
-        Debug.Log("Game Over!");
-        BananoNetManager netman = GameObject.FindGameObjectWithTag("NetMan").GetComponent<BananoNetManager>();
+    public void QuitGame()
+    {
+        SceneManager.LoadSceneAsync(0);
+    }
 
-        netman.gameOver = true;
 
-        netman.StopClient();
+    public void Rcheckpoint()
+    {
+        // Send out a packet to the server that we completed the real obstacles in the block
+        StartCoroutine(SendGamePacket(rootURL + packetURL, bananosCollected, bananosMissed, PlayerPrefs.GetString("LocalWallet"), ScoreKeeper.gameVersion, gamepacketGot));
+        bananosCollected = 0;
+        bananosMissed = 0;
+    }
+
+    // Receipt of POST for a standard game packet
+    public void GamePacketReceipt(JSONNode N)
+    {
+        Debug.Log("Got packet");
+        Debug.Log(N["message"]);
+
+        // Player is still valid. Get the next block
+        if (N["code"] == 1)
+        {
+            var wBlock = N["block"];
+            var text = wBlock["text"];
+            var length = wBlock["length"];
+            var time = wBlock["time"];
+            var delay = wBlock["delay"];
+            var speed = wBlock["speed"];
+
+            // Send this new block and data to the manager
+            lsa.ReceiveNewBlock(text, length, time, delay, speed);
+
+        }
+        else if (N["code"] == 0)
+        {
+            ClearField();
+            SceneryObj.GetComponent<SceneryDictionary>().StopScenery();
+
+            captchaText.text = N["message"];
+            captchaUI.SetActive(true);
+        }
+        else if (N["code"] == 2)
+        {
+            errorText.text = N["message"];
+            errorUI.SetActive(true);
+
+            ClearField();
+            SceneryObj.GetComponent<SceneryDictionary>().StopScenery();
+        }
+
+    }
+
+    public void ClearField()
+    {
+        foreach(GameObject g in GameObject.FindGameObjectsWithTag("Obstacle"))
+        {
+            Destroy(g);
+        }
+    }
+
+    // Receipt of POST for the initial validation packet
+    public void ValidationReceipt(JSONNode N)
+    {
+        Debug.Log(N["message"]);
+
+        if(N["code"] == 0)
+        {
+            ClearField();
+            SceneryObj.GetComponent<SceneryDictionary>().StopScenery();
+
+            captchaText.text = N["message"];
+            captchaUI.SetActive(true);
+        }
+        else if (N["code"] == 1)
+        {
+            sM.StartTimer();
+            SceneryObj.GetComponent<SceneryDictionary>().StartScenery();
+
+            StartCoroutine(SendGamePacket(rootURL + packetURL, bananosCollected, bananosMissed, PlayerPrefs.GetString("LocalWallet"), ScoreKeeper.gameVersion, gamepacketGot));
+        }
+        else if (N["code"] == 2)
+        {
+            errorText.text = N["message"];
+            errorUI.SetActive(true);
+
+            ClearField();
+            SceneryObj.GetComponent<SceneryDictionary>().StopScenery();
+
+        }
+
+        connectingUI.SetActive(false);
+
+        
+    }
+
+    private void OnApplicationPause(bool pause)
+    {
+        QuitGame();
+    }
+
+    public void OpenCaptcha()
+    {
+        Application.OpenURL(rootURL + captchaURL + "&wallet=" + PlayerPrefs.GetString("LocalWallet") );
+        captchaUI.SetActive(false);
+
+        QuitGame();
+
     }
 
 }

@@ -13,8 +13,8 @@ public class Umpire : MonoBehaviour {
 
     void Start()
     {
-        PlayerPrefs.SetFloat("Bananos", 0);
-        PlayerPrefs.Save();
+        //PlayerPrefs.SetFloat("Bananos", 0);
+        //PlayerPrefs.Save();
         audioplayer = GetComponent<AudioSource>();
     }
 
@@ -26,7 +26,7 @@ public class Umpire : MonoBehaviour {
             // Debug.Log("detected");
             if (collision.gameObject.GetComponent<ObstacleMover>().banano)
             {
-                playercomm.CmdMissBanano();
+                playercomm.MissBanano();
                 Destroy(collision.gameObject);
                 return;
             }
@@ -48,7 +48,7 @@ public class Umpire : MonoBehaviour {
 
     public void CollectBanano()
     {
-        playercomm.CmdCollectBanano();
+        playercomm.CollectBanano();
 
         scoremanager.AddPoint();
 
@@ -64,6 +64,11 @@ public class Umpire : MonoBehaviour {
     public void CheckPoint()
     {
         scoremanager.TallyPoints();
+    }
+
+    public void RcheckPoint()
+    {
+        playercomm.Rcheckpoint();
     }
 
 }

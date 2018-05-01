@@ -25,6 +25,11 @@ public class ScenerySpawner : MonoBehaviour {
         InvokeRepeating("SecondUpdate", 1, 1);
         timerMax = Random.Range(minTime, maxTime + 1);
     }
+
+    public void StopScenery()
+    {
+        CancelInvoke("SecondUpdate");
+    }
 	
     void SecondUpdate()
     {
@@ -35,6 +40,7 @@ public class ScenerySpawner : MonoBehaviour {
         {
             GameObject inst = sd.SceneryDict[Random.Range(0, sd.SceneryDict.Count)];
             inst.transform.position = transform.position;
+            inst.tag = "Obstacle";
 
             inst.GetComponent<ObstacleMover>().speed = speed;
             Instantiate(inst);

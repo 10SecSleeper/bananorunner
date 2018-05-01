@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
+using UnityEngine.Networking;
 
 public class MonkeyController : MonoBehaviour {
 
@@ -37,6 +38,10 @@ public class MonkeyController : MonoBehaviour {
             {
                 ump.CheckPoint();
             }
+            else if (other.gameObject.tag == "RCP")
+            {
+                ump.RcheckPoint();
+            }
 
         }
     }
@@ -47,8 +52,8 @@ public class MonkeyController : MonoBehaviour {
         rb = GetComponent<Rigidbody>();
         logic = GetComponent<MonkeyLogic>();
         audplayer = GetComponent<AudioSource>();
-
-	}
+        NetworkCRC.scriptCRCCheck = true;
+    }
 
     void PCControls()
     {
@@ -110,6 +115,8 @@ public class MonkeyController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+        GetComponent<Collider>().enabled = true;
 
         if (Application.isMobilePlatform)
             MobileControls();

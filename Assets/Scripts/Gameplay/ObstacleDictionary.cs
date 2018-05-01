@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
 public class ObstacleDictionary : MonoBehaviour {
 
     [System.Serializable]
@@ -24,6 +25,7 @@ public class ObstacleDictionary : MonoBehaviour {
 
         public int bananos = 0;
         public string generated = "";
+        public int missableBananos = 0;
 
     }
 
@@ -34,6 +36,7 @@ public class ObstacleDictionary : MonoBehaviour {
 
         for (int i = 0; i < blockSize; i++)
         {
+            int thisBlockBananos = 0;
 
             int one = Random.Range(0, obstacles.Count);
             int two = Random.Range(0, obstacles.Count);
@@ -45,11 +48,38 @@ public class ObstacleDictionary : MonoBehaviour {
             }
 
             if (obstacles[one].banano)
+            {
                 index.bananos += 1;
+                thisBlockBananos++;
+            }
+                
             if (obstacles[two].banano)
+            {
                 index.bananos += 1;
+                thisBlockBananos++;
+            }
             if (obstacles[three].banano)
+            {
+                thisBlockBananos++;
                 index.bananos += 1;
+
+            }
+
+            switch (thisBlockBananos)
+            {
+                case 0:
+                    break;
+                case 1:
+                    break;
+                case 2:
+                    index.missableBananos += 1;
+                    break;
+                case 3:
+                    index.missableBananos += 2;
+                    break;
+                default:
+                    break;
+            }
 
             string bit = one + "," + two + "," + three;
 

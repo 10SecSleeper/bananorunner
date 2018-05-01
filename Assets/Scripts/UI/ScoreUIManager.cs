@@ -16,19 +16,42 @@ public class ScoreUIManager : MonoBehaviour {
     Text timetext;
 
     int time = 0;
+    int roundScore = 0;
+    int roundTime = 0;
 
 	// Use this for initialization
 	void Start () {
 
+        roundScore = 0;
         pendingscore = 0;
-        score = 0;
-        InvokeRepeating("Count", 0f, 1f);
+        roundTime = 0;
+
+        if (PlayerPrefs.HasKey("Bananos"))
+        {
+            score = PlayerPrefs.GetInt("Bananos");
+        }
+       
+        else
+            score = 0;
+
+        scoretext.text = score.ToString();
+        
 	}
+
+    public void StartTimer()
+    {
+        InvokeRepeating("Count", 0f, 1f);
+    }
 
     void Count()
     {
         time++;
         timetext.text = ReturnTime(time.ToString());
+
+        roundTime = time;
+
+        score = PlayerPrefs.GetInt("Bananos");
+        scoretext.text = score.ToString();
     }
 
     string ReturnTime(string seconds)
@@ -65,7 +88,6 @@ public class ScoreUIManager : MonoBehaviour {
 
         temp = (hours + " Hours, " + minutes + " Mins, " + secs + " Secs");
         return temp;
-
     }
 
     public void AddPoint()
@@ -77,21 +99,19 @@ public class ScoreUIManager : MonoBehaviour {
 	
     public void TallyPoints()
     {
-
-        score += pendingscore;
-        pendingscore = 0;
-
-        scoretext.text = score.ToString();
-        pendingtext.text = pendingscore.ToString();
-
+        score = PlayerPrefs.GetInt("Bananos") + pendingscore;
         PlayerPrefs.SetInt("Bananos", score);
         PlayerPrefs.Save();
 
+        scoretext.text = score.ToString();
+        roundScore += pendingscore;
+
+        ScoreKeeper.roundScore = roundScore;
+
+        pendingscore = 0;
+        pendingtext.text = pendingscore.ToString();
+
     }
 
-    public void ExitGame()
-    {
-        GameObject.FindGameObjectWithTag("NetMan").GetComponent<BananoNetManager>().StopClient();
-    }
 
 }

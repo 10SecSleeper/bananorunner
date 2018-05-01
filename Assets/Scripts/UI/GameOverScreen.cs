@@ -8,21 +8,25 @@ public class GameOverScreen : MonoBehaviour {
     [SerializeField]
     Text Bananos;
 
+    [SerializeField]
+    Text RoundBananos;
+
 	// Use this for initialization
 	void Start () {
-		
+        ScoreKeeper.gameOver = false;
+        SetBananos();
 	}
 
     public void SetBananos()
     {
         Bananos.text = PlayerPrefs.GetInt("Bananos").ToString() + " Bananos";
-        PlayerPrefs.SetInt("Bananos", 0);
-        PlayerPrefs.Save();
+        RoundBananos.text = ScoreKeeper.roundScore.ToString() + " Bananos";
+        ScoreKeeper.roundScore = 0;
     }
 
     public void QuitGame()
     {
-        Application.Quit();
+        gameObject.SetActive(false);
     }
 
 }

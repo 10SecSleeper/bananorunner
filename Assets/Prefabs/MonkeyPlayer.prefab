@@ -305,15 +305,14 @@ GameObject:
   m_Component:
   - component: {fileID: 4099767441072156}
   - component: {fileID: 33316578046832870}
-  - component: {fileID: 136992709991427420}
   - component: {fileID: 114591139581592958}
   - component: {fileID: 54362461993975402}
   - component: {fileID: 114750151578515440}
-  - component: {fileID: 65530462574877816}
   - component: {fileID: 82223907981484364}
+  - component: {fileID: 65594484138722436}
   m_Layer: 0
   m_Name: MonkeyPlayer
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7323,18 +7322,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 1
---- !u!65 &65530462574877816
+--- !u!65 &65594484138722436
 BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1079284157041080}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.09, y: 2.11, z: 1}
-  m_Center: {x: 0, y: 0, z: 1.05}
+  m_Size: {x: 0.82945037, y: 2.3676171, z: 0.7315607}
+  m_Center: {x: 0.008697152, y: 0.15903735, z: 0.17575884}
 --- !u!82 &82223907981484364
 AudioSource:
   m_ObjectHideFlags: 1
@@ -7483,19 +7482,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ump: {fileID: 0}
   colliding: 0
---- !u!136 &136992709991427420
-CapsuleCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1079284157041080}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.61
-  m_Height: 2.39
-  m_Direction: 1
-  m_Center: {x: 0, y: 0.1, z: 0}
 --- !u!137 &137842919851276676
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

@@ -36,7 +36,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1553166641090564}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 3.078, z: 83.55}
+  m_LocalPosition: {x: 0, y: 3.078, z: 68.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -78,6 +78,16 @@ MonoBehaviour:
     impenetrable: 1
     interactive: 0
     banano: 0
+  - obj: {fileID: 1378577943857536, guid: ffbfc0baa4cd5fc45bbbdadde041e0a9, type: 2}
+    name: Banano
+    impenetrable: 0
+    interactive: 0
+    banano: 1
+  - obj: {fileID: 1378577943857536, guid: ffbfc0baa4cd5fc45bbbdadde041e0a9, type: 2}
+    name: Banano
+    impenetrable: 0
+    interactive: 0
+    banano: 1
   - obj: {fileID: 1378577943857536, guid: ffbfc0baa4cd5fc45bbbdadde041e0a9, type: 2}
     name: Banano
     impenetrable: 0
@@ -181,11 +191,6 @@ MonoBehaviour:
   - obj: {fileID: 1825494819030964, guid: c74e7d5110ff1894caee704b059aa310, type: 2}
     name: Snowman
     impenetrable: 1
-    interactive: 0
-    banano: 0
-  - obj: {fileID: 0}
-    name: Fresh Air
-    impenetrable: 0
     interactive: 0
     banano: 0
 --- !u!114 &114546267224642484
